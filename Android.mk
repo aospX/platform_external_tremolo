@@ -28,7 +28,9 @@ else
 LOCAL_CFLAGS += \
     -DONLY_C
 endif
+ifeq ($(findstring -O, $(TARGET_GLOBAL_CFLAGS)),)
 LOCAL_CFLAGS+= -O2
+endif
 
 LOCAL_C_INCLUDES:= \
 	$(LOCAL_PATH)/Tremolo
